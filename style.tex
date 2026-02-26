@@ -1,0 +1,45 @@
+% --- PACCHETTI FONDAMENTALI ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx} % Per inserire le immagini
+\usepackage{tikz}     % Necessario per posizionare loghi e disegnare lo sfondo
+
+% Definizione palette colori "Acqua"
+\definecolor{Oceano}{RGB}{0, 105, 148}
+\definecolor{OceanoAlert}{RGB}{0, 105, 148}
+\definecolor{Celeste}{RGB}{135, 206, 235}
+\definecolor{BluProfondo}{RGB}{0, 51, 102}
+
+% Applicazione dei colori ai vari elementi di Beamer
+\usecolortheme[named=Oceano]{structure}
+\setbeamercolor{palette primary}{bg=Oceano, fg=white}
+\setbeamercolor{palette secondary}{bg=Celeste, fg=BluProfondo}
+\setbeamercolor{palette tertiary}{bg=BluProfondo, fg=white}
+\setbeamercolor{title}{bg=Oceano, fg=white}
+\setbeamercolor{frametitle}{bg=Oceano, fg=white}
+\setbeamercolor{item}{fg=Oceano}
+\setbeamercolor{alerted text}{fg=OceanoAlert}
+
+% Rimuove i piccoli simboli di navigazione in basso per un look più pulito
+\setbeamertemplate{navigation symbols}{}
+
+% --- FASCIA DEL TITOLO COMPLETAMENTE PERSONALIZZATA ---
+% Creiamo un blocco su misura per controllare esattamente altezze e loghi
+\setbeamertemplate{frametitle}{
+  \nointerlineskip
+  % Creiamo un box alto in totale 1.4 cm.
+  % Il rightskip=5.5cm assicura che il testo non vada mai a finire sotto la zona dei loghi.
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1.0cm,dp=0.4cm,leftskip=0.4cm,rightskip=5.5cm]{frametitle}
+    \usebeamerfont{frametitle}\vspace{-0.45cm}\insertframetitle
+
+    \begin{tikzpicture}[remember picture,overlay]
+      % 1. Disegna il rettangolo bianco largo 5.2 cm e alto esattamente 1.4 cm
+      \fill[white] (current page.north east) rectangle ++(-4cm, -1.5cm);
+
+      % 2. Inserisce i due loghi, centrandoli verticalmente nella fascia (-0.7cm)
+      \node[anchor=east, xshift=-0.2cm, yshift=-0.7cm] at (current page.north east) {\includegraphics[height=1.2cm]{logoH2TO.png}};
+      \node[anchor=east, xshift=-2.45cm, yshift=-0.7cm] at (current page.north east) {\includegraphics[height=1.2cm]{logoFIPSAS.png}};
+    \end{tikzpicture}
+  \end{beamercolorbox}
+}

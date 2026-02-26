@@ -1,0 +1,19 @@
+#+TITLE: [Titolo]
+#+SUBTITLE: [Sottotitolo]
+#+AUTHOR: [Relatore]
+#+DATE: [Data]
+
+#+startup: beamer
+#+LaTeX_CLASS: beamer
+#+BEAMER_THEME: Madrid
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \input{style.tex}
+#+CITE_EXPORT: basic
+
+* Slide 1
+
+Testo slide 1
+
+* Slide 2
+
+Testo slide 2
