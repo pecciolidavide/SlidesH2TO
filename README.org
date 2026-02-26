@@ -1,0 +1,33 @@
+#+TITLE: Documentazione Progetto Slides H2TO
+#+AUTHOR: Davide Peccioli
+
+* Descrizione
+Questo progetto contiene i file sorgente e le configurazioni necessarie per generare presentazioni LaTeX Beamer personalizzate. L'intero flusso di lavoro è pensato per essere gestito comodamente tramite Emacs e Org-mode.
+
+* Struttura del Progetto
+Il repository è composto dai seguenti file fondamentali:
+
+- slides.org :: Il documento di testo principale in cui redigere i contenuti (titoli, liste, testi) della presentazione. Include le direttive di intestazione per l'esportazione in Beamer.
+- style.tex :: Il preambolo LaTeX personalizzato. Definisce la palette cromatica, applica le modifiche al tema base e gestisce il layout avanzato (come la testata bicolore).
+- logoH2TO.png :: Il logo ufficiale della scuola subacquea H2TO.
+- logoFIPSAS.png :: Il logo della federazione FIPSAS.
+
+* Requisiti di Sistema
+Per poter compilare i sorgenti e generare il file PDF finale, è necessario avere a disposizione:
+1. GNU Emacs con Org-mode aggiornato.
+2. Una distribuzione LaTeX completa (ad esempio TeX Live o MiKTeX).
+
+* Istruzioni per la Compilazione
+Per generare la presentazione in PDF a partire dal sorgente Org-mode:
+
+1. Aprire il file =slides.org= in Emacs.
+2. Richiamare il dispatcher di esportazione di Org premendo =C-c C-e=.
+3. Digitare =l= per accedere alle opzioni di esportazione LaTeX.
+4. Digitare =P= per generare il PDF (=slides.pdf=), oppure =b= per generarlo e aprirlo automaticamente nel visualizzatore predefinito.
+
+* Dettagli del Tema Grafico e Personalizzazioni
+La grafica si basa sul tema nativo di Beamer "Madrid", pesantemente modificato tramite il file =style.tex=:
+
+- Colori: Sono stati definiti tre colori principali a tema acquatico: Oceano (RGB 0, 105, 148), Celeste (RGB 135, 206, 235) e BluProfondo (RGB 0, 51, 102). Il colore principale per la struttura e il testo evidenziato (alert) è l'Oceano.
+- Layout della Testata: Il blocco =frametitle= è stato riscritto per limitare l'espansione del testo (tramite =rightskip=) e creare un rettangolo bianco in alto a destra. Questo spazio ospita in modo pulito e centrato i loghi =logoH2TO.png= e =logoFIPSAS.png= utilizzando la libreria TikZ.
+- Navigazione: I simboli di navigazione standard in basso a destra sono stati nascosti per garantire un design più pulito.
