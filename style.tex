@@ -35,11 +35,10 @@
 
     \begin{tikzpicture}[remember picture,overlay]
       % 1. Disegna il rettangolo bianco largo 5.2 cm e alto esattamente 1.4 cm
-      \fill[white] (current page.north east) rectangle ++(-4cm, -1.5cm);
+      \fill[white] (current page.north east) rectangle ++(-2.77cm, -1.5cm);
 
       % 2. Inserisce i due loghi, centrandoli verticalmente nella fascia (-0.7cm)
       \node[anchor=east, xshift=-0.2cm, yshift=-0.7cm] at (current page.north east) {\includegraphics[height=1.2cm]{logoH2TO.png}};
-      \node[anchor=east, xshift=-2.45cm, yshift=-0.7cm] at (current page.north east) {\includegraphics[height=1.2cm]{logoFIPSAS.png}};
     \end{tikzpicture}
   \end{beamercolorbox}
 }
